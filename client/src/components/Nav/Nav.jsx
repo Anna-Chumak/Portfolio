@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+import Button from '../Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const StyledNav = styled.nav`
   border: none;
@@ -15,7 +17,18 @@ const StyledNav = styled.nav`
   font-size: 14pt;
   font-family: 'Courier Prime', monospace;
   padding: 0 1rem;
-  .menu {
+
+  .mobileMenuButton {
+    display: none;
+  }
+  @media (max-width: 500px) {
+    .menu {
+      display: none;
+    }
+    .mobileMenuButton {
+      display: block;
+    }
+    justify-content: space-between;
   }
 `;
 
@@ -35,7 +48,6 @@ const StyledLink = styled.a`
 const SocialLink = styled(StyledLink)`
   color: white;
   font-size: 24pt;
-  /* background-color: blue; */
 `;
 
 const menuItems = {
@@ -51,9 +63,19 @@ const socialLinks = [
   [faGithubSquare, 'https://github.com/Anna-Chumak'],
 ];
 
-export default function Nav() {
+export default function Nav({ setToggleModal }) {
+  const handleClick = () => {
+    setToggleModal((prev) => !prev);
+  };
+
   return (
     <StyledNav>
+      <div className='mobileMenuButton'>
+        <Button
+          handleClick={handleClick}
+          content={<FontAwesomeIcon icon={faArrowRight} />}
+        />
+      </div>
       <div className='menu'>
         {Object.keys(menuItems).map((item, index) => (
           <StyledLink href={menuItems[item]} key={index}>

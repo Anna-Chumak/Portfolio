@@ -13,3 +13,7 @@
 main {
   flex: 1;
 }
+
+.App {
+  position: relative;
+}
