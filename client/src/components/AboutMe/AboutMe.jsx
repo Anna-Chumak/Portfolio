@@ -1,6 +1,4 @@
-import './AboutMe.css';
 import styled from 'styled-components';
-import TypeWriterEffect from 'react-typewriter-effect';
 
 const StyledAbout = styled.div`
   background-color: rgb(68, 117, 117);

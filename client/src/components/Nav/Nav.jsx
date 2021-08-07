@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 import Button from '../Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { socialLinks, menuItems } from '../../utilities/data';
 
 const StyledNav = styled.nav`
   border: none;
@@ -50,19 +48,6 @@ const SocialLink = styled(StyledLink)`
   color: white;
   font-size: 24pt;
 `;
-
-const menuItems = {
-  Home: '#home',
-  'About Me': '#aboutMe',
-  Projects: '#projects',
-  Resume: '#',
-};
-
-const socialLinks = [
-  [faLinkedin, 'https://www.linkedin.com/in/anna-kuzava/'],
-  [faEnvelopeSquare, 'mailto: annutack@gmail.com'],
-  [faGithubSquare, 'https://github.com/Anna-Chumak'],
-];
 
 export default function Nav({ setToggleModal, stateModal }) {
   const handleClick = () => {
