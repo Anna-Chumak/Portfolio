@@ -1,5 +1,18 @@
 import './AboutMe.css';
+import styled from 'styled-components';
+import TypeWriterEffect from 'react-typewriter-effect';
+
+const StyledAbout = styled.div`
+  background-color: rgb(68, 117, 117);
+  min-height: calc(100vh - 4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 24pt;
+  padding: 0 50px;
+`;
 
 export default function AboutMe() {
-  return <section>About me</section>;
+  return <StyledAbout></StyledAbout>;
 }

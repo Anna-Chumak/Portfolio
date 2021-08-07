@@ -5,6 +5,7 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 const StyledNav = styled.nav`
   border: none;
@@ -63,7 +64,7 @@ const socialLinks = [
   [faGithubSquare, 'https://github.com/Anna-Chumak'],
 ];
 
-export default function Nav({ setToggleModal }) {
+export default function Nav({ setToggleModal, stateModal }) {
   const handleClick = () => {
     setToggleModal((prev) => !prev);
   };
@@ -73,7 +74,9 @@ export default function Nav({ setToggleModal }) {
       <div className='mobileMenuButton'>
         <Button
           handleClick={handleClick}
-          content={<FontAwesomeIcon icon={faArrowRight} />}
+          content={
+            <FontAwesomeIcon icon={stateModal ? faArrowLeft : faArrowRight} />
+          }
         />
       </div>
       <div className='menu'>

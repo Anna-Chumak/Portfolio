@@ -5,6 +5,7 @@ import ModalMenu from './components/ModalMenu/ModalMenu';
 import Nav from './components/Nav/Nav';
 import Projects from './components/Projects/Projects';
 import { useState } from 'react';
+import Home from './components/Home/Home';
 
 function App() {
   const [toggleModal, setToggleModal] = useState(false);
@@ -12,7 +13,9 @@ function App() {
     <>
       <main className='App'>
         {toggleModal && <ModalMenu />}
-        <Nav setToggleModal={setToggleModal} />
+
+        <Nav setToggleModal={setToggleModal} stateModal={toggleModal} />
+        <Home />
         <AboutMe />
         <Projects />
       </main>
