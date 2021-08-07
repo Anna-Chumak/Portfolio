@@ -7,7 +7,7 @@ import { socialLinks, menuItems } from '../../utilities/data';
 
 const StyledNav = styled.nav`
   border: none;
-  height: 4rem;
+  min-height: 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,7 +16,9 @@ const StyledNav = styled.nav`
   font-size: 14pt;
   font-family: 'Courier Prime', monospace;
   padding: 0 1rem;
-
+  .contacts {
+    height: fit-content
+  }
   .mobileMenuButton {
     display: none;
   }
@@ -45,8 +47,16 @@ const StyledLink = styled.a`
 `;
 
 const SocialLink = styled(StyledLink)`
-  color: white;
-  font-size: 24pt;
+.social {
+  transition: all 250ms ease-in-out;
+}
+  &:hover {
+    background-color: inherit;
+    .social {
+      transform: scale(1.4);
+      transition: all 250ms ease-in-out;
+    }
+  }
 `;
 
 export default function Nav({ setToggleModal, stateModal }) {
@@ -74,7 +84,7 @@ export default function Nav({ setToggleModal, stateModal }) {
       <div className='contacts'>
         {socialLinks.map((link, index) => (
           <SocialLink href={link[1]} target='_blank' key={index}>
-            <FontAwesomeIcon icon={link[0]} />
+            <FontAwesomeIcon className='social' icon={link[0]} size='lg' fixedWidth/>
           </SocialLink>
         ))}
       </div>
