@@ -1,4 +1,8 @@
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons';
 
 const StyledNav = styled.nav`
   border: none;
@@ -28,7 +32,11 @@ const StyledLink = styled.a`
   }
 `;
 
-const SocialLink = styled(StyledLink)``;
+const SocialLink = styled(StyledLink)`
+  color: white;
+  font-size: 24pt;
+  /* background-color: blue; */
+`;
 
 const menuItems = {
   Home: '#home',
@@ -37,11 +45,11 @@ const menuItems = {
   Resume: '#',
 };
 
-const socialLinks = {
-  LI: 'https://www.linkedin.com/in/anna-kuzava/',
-  '@': 'mailto: annutack@gmail.com',
-  GH: 'https://github.com/Anna-Chumak',
-};
+const socialLinks = [
+  [faLinkedin, 'https://www.linkedin.com/in/anna-kuzava/'],
+  [faEnvelopeSquare, 'mailto: annutack@gmail.com'],
+  [faGithubSquare, 'https://github.com/Anna-Chumak'],
+];
 
 export default function Nav() {
   return (
@@ -54,9 +62,9 @@ export default function Nav() {
         ))}
       </div>
       <div className='contacts'>
-        {Object.keys(socialLinks).map((item, index) => (
-          <SocialLink href={socialLinks[item]} key={index}>
-            {item}
+        {socialLinks.map((link, index) => (
+          <SocialLink href={link[1]} target='_blank' key={index}>
+            <FontAwesomeIcon icon={link[0]} />
           </SocialLink>
         ))}
       </div>
