@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import Button from '../Button/Button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { socialLinks, menuItems } from '../../utilities/data';
+import styled from "styled-components";
+import Button from "../Button/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { socialLinks, menuItems } from "../../utilities/data";
 
 const StyledNav = styled.nav`
   border: none;
@@ -14,10 +14,9 @@ const StyledNav = styled.nav`
   color: white;
   background-color: rgb(35, 82, 82);
   font-size: 14pt;
-  font-family: 'Courier Prime', monospace;
   padding: 0 1rem;
   .contacts {
-    height: fit-content
+    height: fit-content;
   }
   .mobileMenuButton {
     display: none;
@@ -43,13 +42,14 @@ const StyledLink = styled.a`
   &:hover {
     background-color: rgb(68, 117, 117);
     transition: all 250ms ease-in-out;
+    color: var(--clr-orange);
   }
 `;
 
 const SocialLink = styled(StyledLink)`
-.social {
-  transition: all 250ms ease-in-out;
-}
+  .social {
+    transition: all 250ms ease-in-out;
+  }
   &:hover {
     background-color: inherit;
     .social {
@@ -66,7 +66,7 @@ export default function Nav({ setToggleModal, stateModal }) {
 
   return (
     <StyledNav>
-      <div className='mobileMenuButton'>
+      <div className="mobileMenuButton">
         <Button
           handleClick={handleClick}
           content={
@@ -74,17 +74,28 @@ export default function Nav({ setToggleModal, stateModal }) {
           }
         />
       </div>
-      <div className='menu'>
+      <div className="menu">
         {Object.keys(menuItems).map((item, index) => (
-          <StyledLink href={menuItems[item]} key={index}>
+          <StyledLink
+            href={menuItems[item]}
+            key={index}
+            target={
+              menuItems[item] === "./assets/AnnaKuzava.pdf" ? "_blank" : ""
+            }
+          >
             {item}
           </StyledLink>
         ))}
       </div>
-      <div className='contacts'>
+      <div className="contacts">
         {socialLinks.map((link, index) => (
-          <SocialLink href={link[1]} target='_blank' key={index}>
-            <FontAwesomeIcon className='social' icon={link[0]} size='lg' fixedWidth/>
+          <SocialLink href={link[1]} target="_blank" key={index}>
+            <FontAwesomeIcon
+              className="social"
+              icon={link[0]}
+              size="lg"
+              fixedWidth
+            />
           </SocialLink>
         ))}
       </div>

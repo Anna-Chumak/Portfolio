@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 const StyledModal = styled.div`
-  font-family: 'Courier Prime', monospace;
   position: absolute;
   display: flex;
   flex-direction: column;

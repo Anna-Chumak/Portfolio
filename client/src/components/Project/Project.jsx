@@ -6,6 +6,10 @@ const StyledProjectWrapper = styled.div`
   padding: 5rem 0;
   align-items: center;
   perspective: 700px;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
 `;
 
 const StyledGrid = styled.div`
@@ -25,6 +29,9 @@ const StyledGrid = styled.div`
     transition: transform 250ms ease-in-out;
     transform: initial;
   }
+  @media (max-width: 700px) {
+    width: 90vw;
+  }
 `;
 
 const StyledImage = styled.img`
@@ -37,6 +44,9 @@ const StyledImage = styled.img`
     transition: transform 250ms ease-in-out;
     transform: scale(1.4);
   } */
+  @media (max-width: 700px) {
+    width: 90vw;
+  }
 `;
 
 const StyledInfoSection = styled.div`
@@ -45,7 +55,10 @@ const StyledInfoSection = styled.div`
   flex-direction: column;
   height: auto;
   color: white;
-  font-family: "Courier Prime", monospace;
+  text-align: left;
+  @media (max-width: 700px) {
+    width: 90vw;
+  }
 `;
 
 const StyledH2 = styled.h2`
@@ -61,30 +74,36 @@ const StyledP = styled.p`
   font-size: 14pt;
 `;
 
+const OrangeText = styled(StyledH2)`
+  color: var(--clr-orange);
+`;
+
 const StyledProjectLink = styled.a`
   text-decoration: underline;
   color: white;
 `;
 
-export default function Project(props) {
-  const { project, index } = props;
+const StyledSpan = styled.span`
+  color: var(--clr-orange);
+`;
+
+export default function Project({ project, index }) {
+  const { title, description, environment, link, pictures } = project;
   return (
     <StyledProjectWrapper reverse={index % 2 !== 0}>
       <StyledInfoSection>
-        <StyledH2>{project["title"]}</StyledH2>
-        <StyledP>{project["description"]}</StyledP>
+        <OrangeText>{title}</OrangeText>
+        <StyledP>{description}</StyledP>
         <StyledP>
-          {project["environment"][0]}: {project["environment"][1]}
+          <StyledSpan>{environment[0]}</StyledSpan>: {environment[1]}
         </StyledP>
         <StyledP>
-          <bold>{project["link"][0]}</bold>:{" "}
-          <StyledProjectLink href="{projectsInfo[0]['link'][1]}">
-            {project["link"][1]}
-          </StyledProjectLink>
+          <StyledSpan>{link[0]}</StyledSpan>:{" "}
+          <StyledProjectLink href={link[1]}>{link[1]}</StyledProjectLink>
         </StyledP>
       </StyledInfoSection>
       <StyledGrid reverse={index % 2 !== 0}>
-        {project.pictures.map((picture, index) => (
+        {pictures.map((picture, index) => (
           <StyledImage src={`./assets/${picture}`} key={index} />
         ))}
       </StyledGrid>

@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import TypeWriterEffect from 'react-typewriter-effect';
-import { introText } from '../../utilities/data';
+import styled from "styled-components";
+import TypeWriterEffect from "react-typewriter-effect";
+import { introText } from "../../utilities/data";
 
 const StyledHome = styled.section`
   background-color: rgb(68, 117, 117);
@@ -21,6 +21,10 @@ const StyledWrapper = styled.div`
   min-width: 80%;
 `;
 
+const textStyle = {
+  color: "white",
+};
+
 export default function Home() {
   function renderTypeWriter() {
     let delay = 0;
@@ -29,12 +33,9 @@ export default function Home() {
       return (
         <TypeWriterEffect
           key={index}
-          textStyle={{
-            fontFamily: "'Courier Prime', monospace",
-            color: 'white',
-          }}
+          textStyle={textStyle}
           startDelay={delay}
-          cursorColor='white'
+          cursorColor="white"
           text={sentence}
           typeSpeed={50}
           hideCursorAfterText={!(index === introText.length - 1)}

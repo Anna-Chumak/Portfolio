@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const StyledFooter = styled.footer`
   border: none;
@@ -9,7 +9,6 @@ const StyledFooter = styled.footer`
   color: white;
   background-color: rgb(35, 82, 82);
   font-size: 14pt;
-  font-family: 'Courier Prime', monospace;
 `;
 
 export default function Footer() {

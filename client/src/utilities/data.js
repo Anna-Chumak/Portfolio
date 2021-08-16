@@ -5,7 +5,7 @@ export const menuItems = {
   Home: "#home",
   "About Me": "#aboutMe",
   Projects: "#projects",
-  Resume: "#",
+  Resume: "./assets/AnnaKuzava.pdf",
 };
 
 export const socialLinks = [
@@ -16,7 +16,7 @@ export const socialLinks = [
 
 export const introText = [
   "Hello, I'm Anna Kuzava.",
-  "I'm a Software Engineer.",
+  "I'm a Software Developer.",
   "Welcome to my personal portfolio.",
 ];
 
@@ -40,9 +40,9 @@ export const projectsInfo = [
   {
     title: "Hangman Game",
     description:
-      "This is a realization of the classic hangman game. The user is presented with the dashed, one for each letter, and by entering one letter a time, they are trying to guess, the word. If the lettter is in the word, then it is inserted instead of a corresponding dash or two. If the letter is not in the word, then a man on a guillotine appears line by line. The logic of this game was realized using C++, and the user interface was realized using Qt framework.",
+      "This is a replication of the classic hangman game. The user is given a word with all letters substituted with dashes. Entering one letter at a time, users have to guess the word. If the letter entered appears in the word, then it is inserted instead of any corresponding dashes. If the letter is not in the word, then a man on a guillotine appears line by line.",
     environment: ["Environment", "C++, Qt"],
-    link: ["Link to GitHub", "https://graph-memory-game.netlify.app"],
+    link: ["Link to GitHub", "https://github.com/Anna-Chumak/HangManCPlus"],
     pictures: ["hangman1.jpg", "hangman2.jpg", "hangman3.jpg", "hangman4.jpg"],
   },
 ];
