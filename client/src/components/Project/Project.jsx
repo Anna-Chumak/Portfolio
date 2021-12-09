@@ -81,6 +81,7 @@ const OrangeText = styled(StyledH2)`
 const StyledProjectLink = styled.a`
   text-decoration: underline;
   color: white;
+  display: block;
 `;
 
 const StyledSpan = styled.span`
@@ -88,7 +89,8 @@ const StyledSpan = styled.span`
 `;
 
 export default function Project({ project, index }) {
-  const { title, description, environment, link, pictures } = project;
+  const { title, description, environment, linkTitle, links, pictures } =
+    project;
   return (
     <StyledProjectWrapper reverse={index % 2 !== 0}>
       <StyledInfoSection>
@@ -98,8 +100,10 @@ export default function Project({ project, index }) {
           <StyledSpan>{environment[0]}</StyledSpan>: {environment[1]}
         </StyledP>
         <StyledP>
-          <StyledSpan>{link[0]}</StyledSpan>:{" "}
-          <StyledProjectLink href={link[1]}>{link[1]}</StyledProjectLink>
+          <StyledSpan>{linkTitle}</StyledSpan>:{" "}
+          {links.map((link, index) => (
+            <StyledProjectLink href={link}>{link} </StyledProjectLink>
+          ))}
         </StyledP>
       </StyledInfoSection>
       <StyledGrid reverse={index % 2 !== 0}>
