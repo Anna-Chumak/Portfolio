@@ -33,8 +33,8 @@ export default function AboutMe() {
     <StyledAbout id="aboutMe">
       <StyledHeader>About Me</StyledHeader>
       <StyledPar>
-        I'm a Ukrainian-born software developer currently living in the Detroit
-        Metropolitan Area.
+        I'm a Ukrainian-born software developer currently living in the
+        Metro-Boston area.
       </StyledPar>
       <StyledPar>
         I originally started learning foreign languages, like English and
