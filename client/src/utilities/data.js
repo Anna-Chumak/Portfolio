@@ -58,6 +58,23 @@ export const projectsInfo = [
     pictures: ["notepad1.jpg", "notepad2.jpg", "notepad3.jpg", "notepad4.jpg"],
   },
   {
+    title: "Handmade Management Studio",
+    description:
+      "A desktop application for managing orders and items for handmade artist who sell their products using varios online platforms. The app is connected to SQL server database and provides a convenient interface for working with data, including some visual representation of it.",
+    environment: [
+      "Environment",
+      "WPF, C#, Pattern MVVM, SQL Server, Material Design in XAML",
+    ],
+    linkTitle: "Link to video presentation (in Russian)",
+    links: ["https://www.youtube.com/watch?v=cIOD6tKEQRA"],
+    pictures: [
+      "handmade1.jpg",
+      "handmade2.jpg",
+      "handmade3.jpg",
+      "handmade4.jpg",
+    ],
+  },
+  {
     title: "Learn to Read Ukrainian",
     description:
       "This is a full-stack web application for children that are in the process of learning to read in Ukrainian. Children can choose any letter and play some games to memorize their shapes and learn to recognize them among other letters.",
